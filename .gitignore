@@ -12,9 +12,6 @@
 /.next/
 /out/
 
-# production
-/build
-
 # misc
 .DS_Store
 *.pem
@@ -30,3 +27,9 @@ yarn-error.log*
 
 # vercel
 .vercel
+
+# dotenv
+.env
+
+# gitingore
+.gitingore
