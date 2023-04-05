@@ -1,0 +1,155 @@
+.container {
+    display: grid;
+    grid-template-columns: 2fr 2fr 2fr 2fr;
+    grid-template-rows: 1fr 3fr 3fr 10fr;
+  
+    grid-template-areas:
+      "header header header header "
+      "collectionInfo  tokenInfo image image"
+      "empty3 attributes image image"
+      "listNFT listNFT listNFT listNFT";
+     
+    grid-gap: 1em;
+
+   height : 100vh;
+    position: relative;
+    overflow-y: auto;
+    overflow-x: hidden;
+  
+}
+.header {
+  grid-area: header;
+}
+.collectionInfo {
+  grid-area: collectionInfo;
+  margin: 2rem;
+}
+.tokenInfo {
+  grid-area: tokenInfo;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  font-size: 1.2rem;
+}
+.image {
+  grid-area: image;
+  justify-self: center;
+  opacity: 0.8;
+  filter: blur(100px); 
+}
+.image:hover{
+    opacity: 1;
+    transition: 500ms;
+    filter:blur(0px);
+}
+.ipfsImage {
+   max-height: 75vh;
+    object-fit: cover;
+  }
+.attributes {
+  grid-area: attributes;
+  font-size: 1.1rem; 
+  text-align: center;
+
+  --borderWidth:0px;
+  border: solid calc(3 * var(--borderWidth)) #454b58;
+  border-radius: 10px;
+  backdrop-filter: blur(calc(5 * var(--borderWidth)));
+}
+.attributes:hover{
+    backdrop-filter: blur(calc(50 * var(--borderWidth)));
+}
+.attributes .title {
+    font-size: 1.5rem;
+    font-weight: bold;
+    text-decoration: underline;
+    text-align: center;
+}
+.empty3 {
+  grid-area: empty3;
+}   
+.forms {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 3rem;
+    margin: 1rem;
+    border-radius: 10px;
+    background-color: #454b58;
+    color: white;
+    opacity: 0.9;
+}
+.input {
+    padding: 1vh;
+    border-radius: 10px;
+}
+.submit {
+    font-size: 1rem;
+    margin: 0;
+    margin-left: 1rem;
+    border-radius: 10px;
+    padding: 1vh;
+    margin : 1vh;
+    background-color: #6d7688;
+    color: white;
+}
+.submit:hover {
+    background-color: #dadada;
+    color: black;
+}
+
+.background {
+    position: absolute;
+    background-position: cover;
+    
+    left: 0;
+    top: 0;
+    z-index: -1;
+    width: 100%;
+    height: auto;
+    transform : translateY(-9%);
+    opacity: 0.7;
+    
+  }
+
+.listNFT{
+  grid-area: listNFT;
+  display:flex;
+    
+    gap:4vmin;
+    padding: 2vmin;
+
+    position : absolute;
+    top: 50%;
+    left: 50%;
+    
+    transform: translate(var(--translationX), -50%);
+
+    border: solid 3px #454b58;
+  border-radius: 10px;
+  backdrop-filter: blur(5px);
+}
+.listNFT:hover{
+  backdrop-filter: blur(15px);   
+}
+.nftOwned {
+    width: 30vh;
+    height: 46vh;
+    min-width: 30vh;
+    min-height: 46vh;
+    border-radius: 10px;
+    
+    object-fit: cover;
+    object-position: calc(var(--translationX)*-1) 50%;
+}
+.backgroundImage {
+  position: fixed;
+  z-index: -2;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url("../../public//Hugochon._bear_market_vs_bull_run_with_an_Richard_Orlinski_styl_b3b38ddb-7b81-410d-ba22-ea371ba633df.png");
+  background-size: cover;
+}
